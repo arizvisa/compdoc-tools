@@ -15,7 +15,7 @@ main(int argc, char** argv)
     int res;
     wchar_t* filename; wchar_t* streamname;
     int index;
-    char* infilename; FILE* in;
+    FILE* in;
 
     STGOPTIONS options;
     IStorage* storage;

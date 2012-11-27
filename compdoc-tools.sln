@@ -1,22 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liststreams", "liststreams\liststreams.vcproj", "{1FD8344A-16A0-42D8-A0DA-50A3A3348E39}"
-	ProjectSection(ProjectDependencies) = postProject
-		{786FA75D-289A-46C6-9E19-F975D3B988F9} = {786FA75D-289A-46C6-9E19-F975D3B988F9}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liststreams", "liststreams\liststreams.vcxproj", "{1FD8344A-16A0-42D8-A0DA-50A3A3348E39}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "common", "common\common.vcproj", "{786FA75D-289A-46C6-9E19-F975D3B988F9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "common", "common\common.vcxproj", "{786FA75D-289A-46C6-9E19-F975D3B988F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "extractstream", "extractstream\extractstream.vcproj", "{4E3EF99E-4358-4BF6-82E4-1131ACB13C5F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{786FA75D-289A-46C6-9E19-F975D3B988F9} = {786FA75D-289A-46C6-9E19-F975D3B988F9}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "extractstream", "extractstream\extractstream.vcxproj", "{4E3EF99E-4358-4BF6-82E4-1131ACB13C5F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "storestream", "storestream\storestream.vcproj", "{BAB7886F-49B0-4E24-B0BD-BECF2F080290}"
-	ProjectSection(ProjectDependencies) = postProject
-		{786FA75D-289A-46C6-9E19-F975D3B988F9} = {786FA75D-289A-46C6-9E19-F975D3B988F9}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "storestream", "storestream\storestream.vcxproj", "{BAB7886F-49B0-4E24-B0BD-BECF2F080290}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "createdocument", "createdocument\createdocument.vcxproj", "{20F673AD-6D02-4B1A-8F7F-9147CCCEC8CE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "addstream", "addstream\addstream.vcxproj", "{99354A98-EF7F-4F5A-9AE8-75EE624908AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +35,14 @@ Global
 		{BAB7886F-49B0-4E24-B0BD-BECF2F080290}.Debug|Win32.Build.0 = Debug|Win32
 		{BAB7886F-49B0-4E24-B0BD-BECF2F080290}.Release|Win32.ActiveCfg = Release|Win32
 		{BAB7886F-49B0-4E24-B0BD-BECF2F080290}.Release|Win32.Build.0 = Release|Win32
+		{20F673AD-6D02-4B1A-8F7F-9147CCCEC8CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{20F673AD-6D02-4B1A-8F7F-9147CCCEC8CE}.Debug|Win32.Build.0 = Debug|Win32
+		{20F673AD-6D02-4B1A-8F7F-9147CCCEC8CE}.Release|Win32.ActiveCfg = Release|Win32
+		{20F673AD-6D02-4B1A-8F7F-9147CCCEC8CE}.Release|Win32.Build.0 = Release|Win32
+		{99354A98-EF7F-4F5A-9AE8-75EE624908AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99354A98-EF7F-4F5A-9AE8-75EE624908AA}.Debug|Win32.Build.0 = Debug|Win32
+		{99354A98-EF7F-4F5A-9AE8-75EE624908AA}.Release|Win32.ActiveCfg = Release|Win32
+		{99354A98-EF7F-4F5A-9AE8-75EE624908AA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

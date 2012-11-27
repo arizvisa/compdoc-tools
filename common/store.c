@@ -10,6 +10,23 @@
 char g_TransferBuffer[0x200];       // blockcopy
 
 int
+CreateStore(wchar_t* filename, IStorage** out)
+{
+    int res;
+
+    assert(filename != NULL);
+    assert(out != NULL);
+
+    (int)fprintf(stderr, "Creating store %S\n", filename);
+    res = StgCreateDocfile(
+        filename,
+        STGM_CREATE | STGM_FAILIFTHERE | STGM_READWRITE | STGM_SHARE_EXCLUSIVE,
+        0,
+        out);
+    return (res == S_OK)? 1 : 0;
+}
+
+int
 OpenStore(wchar_t* filename, STGOPTIONS* opts, IStorage** out)
 {
     int res;
