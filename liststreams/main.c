@@ -14,7 +14,6 @@ main(int argc, char** argv)
 {
     int res;
     wchar_t* filename;
-    STGOPTIONS options;
     IStorage* storage;
 
     if (argc < 2) {
@@ -23,7 +22,7 @@ main(int argc, char** argv)
     }
     filename = strdupwstr(argv[1]);
 
-    res = OpenStore( filename, &options, &storage );
+    res = OpenStore( filename, &storage );
     if (res == 0)
         fatal("Error opening store");
 

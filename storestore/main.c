@@ -1,4 +1,4 @@
-// extractstream
+// storestore
 #include "stdafx.h"
 
 void
@@ -6,16 +6,15 @@ do_help(int argc, char** argv)
 {
 	if (argv[0] == NULL)
 		argv[0] = "(null)";
-	(int)fprintf(stderr, "usage:\n%s storefilename streamindex outfilename\n", argv[0]);
+	(int)fprintf(stderr, "usage:\n%s storefilename infilename storeindex\n", argv[0]);
 }
 
 int
 main(int argc, char** argv)
 {
     int res;
-    wchar_t* filename;
+    wchar_t* filename; wchar_t* storename; wchar_t* sourcename;
     int index;
-    FILE* out;
 
     IStorage* storage;
 
@@ -24,21 +23,24 @@ main(int argc, char** argv)
         return 1;
     }
     filename = strdupwstr(argv[1]);
-    index = atoi(argv[2]);
-    out = fopen(argv[3], "wb");
-    if (out == NULL)
-        fatal("Error opening file to save to");
-
+    index = atoi(argv[3]);
+    sourcename = strdupwstr(argv[2]);
+    
     res = OpenStore( filename, &storage );
     if (res == 0)
         fatal("Error opening store");
     free(filename);
 
-    res = SaveStream(storage, index, out);
+    res = GetStreamName(storage, index, &storename);
     if (res == 0)
-        fatal("Error saving stream");
+        fatal("Error geting store name");
 
+    res = AddStore(storage, storename, sourcename);
+    if (res == 0)
+        fatal("Error adding store");
+
+    (void)free(storename);
+    (void)free(sourcename);
     (int)CloseStore(storage);
-    (int)fclose(out);
     return 0;
 }

@@ -16,7 +16,6 @@ main(int argc, char** argv)
     wchar_t* filename; wchar_t* streamname;
     FILE* in;
 
-    STGOPTIONS options;
     IStorage* storage;
 
     if (argc < 4) {
@@ -30,7 +29,7 @@ main(int argc, char** argv)
     if (in == NULL)
         fatal("Error opening file to read stream data from");
 
-    res = OpenStore( filename, &options, &storage );
+    res = OpenStore( filename, &storage );
     if (res == 0)
         fatal("Error creating store");
     free(filename);
