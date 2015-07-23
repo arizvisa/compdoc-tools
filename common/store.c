@@ -39,7 +39,7 @@ OpenStore(wchar_t* filename, IStorage** out)
     (int)fprintf(stderr, "Opening store %S\n", filename);
     res = StgOpenStorageEx(
         filename,
-        STGM_READWRITE | STGM_SHARE_EXCLUSIVE, STGFMT_STORAGE,
+        STGM_READWRITE | STGM_SHARE_DENY_NONE | STGM_TRANSACTED, STGFMT_STORAGE,
         0, NULL, NULL, &IID_IStorage,
         out);
 
