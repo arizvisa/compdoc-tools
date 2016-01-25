@@ -2,7 +2,7 @@
 #define __store_h
 
 int CreateStore(wchar_t* filename, IStorage** out);
-int OpenStore(wchar_t* filename, IStorage** out);
+int OpenStore(wchar_t* filename, BOOL writeable, IStorage** out);
 int CloseStore(IStorage* storage);
 int GetStreamName(IStorage* storage, int index, wchar_t** out);
 void PrintStreams(IStorage* storage);

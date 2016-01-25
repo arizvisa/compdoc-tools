@@ -25,7 +25,7 @@ main(int argc, char** argv)
     streamname = strdupwstr(argv[2]);
     storename = strdupwstr(argv[3]);
     
-    res = OpenStore(filename, &storage);
+    res = OpenStore(filename, TRUE, &storage);
     if (res == 0)
         fatal("Error opening store %S", filename);
     free(filename);

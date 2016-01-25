@@ -26,7 +26,7 @@ main(int argc, char** argv)
     index = atoi(argv[3]);
     sourcename = strdupwstr(argv[2]);
     
-    res = OpenStore( filename, &storage );
+    res = OpenStore(filename, TRUE, &storage);
     if (res == 0)
         fatal("Error opening store");
     free(filename);

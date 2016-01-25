@@ -29,7 +29,7 @@ CreateStore(wchar_t* filename, IStorage** out)
 }
 
 int
-OpenStore(wchar_t* filename, IStorage** out)
+OpenStore(wchar_t* filename, BOOL writeable, IStorage** out)
 {
     int res;
 
@@ -39,7 +39,7 @@ OpenStore(wchar_t* filename, IStorage** out)
     (int)fprintf(stderr, "Opening store %S\n", filename);
     res = StgOpenStorageEx(
         filename,
-        STGM_READWRITE | STGM_SHARE_DENY_NONE | STGM_TRANSACTED, STGFMT_STORAGE,
+        STGM_SHARE_DENY_NONE | STGM_TRANSACTED | (writeable? STGM_READWRITE : STGM_READ), STGFMT_STORAGE,
         0, NULL, NULL, &IID_IStorage,
         out);
 
@@ -361,7 +361,7 @@ AddStore(IStorage* storage, wchar_t* storename, wchar_t* sourcename)
     if (res != S_OK)
         return 0;
 
-    res = OpenStore(sourcename, &source);
+    res = OpenStore(sourcename, FALSE, &source);
     if (res == 0)
         return 0;
 

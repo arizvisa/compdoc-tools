@@ -29,7 +29,7 @@ main(int argc, char** argv)
     if (out == NULL)
         fatal("Error opening file to save to");
 
-    res = OpenStore( filename, &storage );
+    res = OpenStore(filename, FALSE, &storage);
     if (res == 0)
         fatal("Error opening store");
     free(filename);

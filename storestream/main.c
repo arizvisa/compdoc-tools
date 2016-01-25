@@ -30,7 +30,7 @@ main(int argc, char** argv)
     if (in == NULL)
         fatal("Error opening file to read stream data from");
 
-    res = OpenStore( filename, &storage );
+    res = OpenStore(filename, TRUE, &storage);
     if (res == 0)
         fatal("Error opening store");
     free(filename);

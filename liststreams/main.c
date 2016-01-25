@@ -22,7 +22,7 @@ main(int argc, char** argv)
     }
     filename = strdupwstr(argv[1]);
 
-    res = OpenStore( filename, &storage );
+    res = OpenStore(filename, FALSE, &storage);
     if (res == 0)
         fatal("Error opening store");
 
